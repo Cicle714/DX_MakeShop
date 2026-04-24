@@ -56,6 +56,8 @@
     <ClCompile Include="ImGui\imgui_widgets.cpp">
       <Filter>ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="Source\StartFlag.cpp" />
+    <ClCompile Include="Source\ItemData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -119,6 +121,12 @@
     </ClInclude>
     <ClInclude Include="ImGui\imstb_truetype.h">
       <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\StartFlag.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ItemData.h">
+      <Filter>TitleScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

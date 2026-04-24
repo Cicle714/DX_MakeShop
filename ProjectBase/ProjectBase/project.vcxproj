@@ -152,10 +152,12 @@
     <ClInclude Include="Library\SceneManager.h" />
     <ClInclude Include="Library\Time.h" />
     <ClInclude Include="Source\BootScene.h" />
+    <ClInclude Include="Source\ItemData.h" />
     <ClInclude Include="Source\Screen.h" />
     <ClInclude Include="Source\DebugScreen.h" />
     <ClInclude Include="Source\PlayScene.h" />
     <ClInclude Include="Source\SceneFactory.h" />
+    <ClInclude Include="Source\StartFlag.h" />
     <ClInclude Include="Source\TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
@@ -175,8 +177,10 @@
     <ClCompile Include="Library\Time.cpp" />
     <ClCompile Include="Source\BootScene.cpp" />
     <ClCompile Include="Source\DebugScreen.cpp" />
+    <ClCompile Include="Source\ItemData.cpp" />
     <ClCompile Include="Source\PlayScene.cpp" />
     <ClCompile Include="Source\SceneFactory.cpp" />
+    <ClCompile Include="Source\StartFlag.cpp" />
     <ClCompile Include="Source\TitleScene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
