@@ -1,8 +1,14 @@
 #include "PlayScene.h"
+#include "ItemData.h"
+#include "StartFlag.h"
+#include "OvenObject.h"
 #include <DxLib.h>
 
 PlayScene::PlayScene()
 {
+	new ItemData();
+	new StartFlag();
+	new OvenObject();
 }
 
 PlayScene::~PlayScene()

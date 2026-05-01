@@ -58,6 +58,7 @@
     </ClCompile>
     <ClCompile Include="Source\StartFlag.cpp" />
     <ClCompile Include="Source\ItemData.cpp" />
+    <ClCompile Include="Source\OvenObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -127,6 +128,9 @@
     </ClInclude>
     <ClInclude Include="Source\ItemData.h">
       <Filter>TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\OvenObject.h">
+      <Filter>PlayScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
