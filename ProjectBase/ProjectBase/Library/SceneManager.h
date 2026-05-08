@@ -32,6 +32,7 @@ namespace SceneManager
 	/// </summary>
 	SceneBase* CurrentScene();
 
+
 	/// <summary>
 	/// Œ»İ‚ÌƒV[ƒ“‚Æ‚µ‚Ä“o˜^‚·‚é
 	/// </summary>

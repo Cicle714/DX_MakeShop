@@ -59,6 +59,8 @@
     <ClCompile Include="Source\StartFlag.cpp" />
     <ClCompile Include="Source\ItemData.cpp" />
     <ClCompile Include="Source\OvenObject.cpp" />
+    <ClCompile Include="Source\Bread.cpp" />
+    <ClCompile Include="Source\SelectObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -130,6 +132,15 @@
       <Filter>TitleScene</Filter>
     </ClInclude>
     <ClInclude Include="Source\OvenObject.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameManager.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Bread.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SelectGameObject.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
   </ItemGroup>

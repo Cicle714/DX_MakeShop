@@ -2,13 +2,19 @@
 #include "ItemData.h"
 #include "StartFlag.h"
 #include "OvenObject.h"
+#include "SelectGameObject.h"
+#include "Bread.h"
 #include <DxLib.h>
 
 PlayScene::PlayScene()
 {
+	SelectGameObject* select;
 	new ItemData();
 	new StartFlag();
-	new OvenObject();
+	Instantiate<OvenObject>();
+	select = Instantiate<SelectGameObject>();
+	select->GetNum(0);
+	
 }
 
 PlayScene::~PlayScene()

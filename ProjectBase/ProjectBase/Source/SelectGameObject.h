@@ -1,27 +1,34 @@
 #pragma once
-
 #include "../Library/GameObject.h"
 #include "Screen.h"
 #include <string>
 #include <vector>
 
-class OvenObject : public GameObject
+class SelectGameObject : public GameObject
 {
 public:
-	OvenObject();
-	~OvenObject();
+	SelectGameObject();
+	~SelectGameObject();
 	void Update() override;
 	void Draw() override;
 
-
+	int GetNum(int num) { return num; }
+	
 private:
-
-	bool Use;
 	bool Push;
 
-	int hImageA;
-	int hImageB;
+	int ObjectNum;
+
+	int selectNum;
+
 	VECTOR position;
 	VECTOR centerPosition;
 	int ObjectSize;
+
+	bool Hold;
+
+	int mugi;
+	int Bread1;
+
+
 };

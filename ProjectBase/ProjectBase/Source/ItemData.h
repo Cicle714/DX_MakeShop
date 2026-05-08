@@ -13,4 +13,8 @@ private:
 
 	std::string* ItemDatas;
 	int DataNum = 5;
+
+
+	
+
 };
