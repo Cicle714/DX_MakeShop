@@ -15,8 +15,8 @@ public:
 	VECTOR position;
 	VECTOR centerPosition;
 
-private:
 	bool Fire;
+private:
 	bool Push;
 
 	int ObjectSize;
@@ -24,4 +24,6 @@ private:
 	int mugi;
 	int Bread1;
 	int Bread2;
+
+	bool Hold;
 };

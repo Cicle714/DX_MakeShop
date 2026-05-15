@@ -15,11 +15,17 @@ public:
 	int GetNum(int num) { return num; }
 	
 private:
+
+
+	VECTOR GetMouseP();
+
 	bool Push;
 
 	int ObjectNum;
 
 	int selectNum;
+
+	int ItemNum;
 
 	VECTOR position;
 	VECTOR centerPosition;

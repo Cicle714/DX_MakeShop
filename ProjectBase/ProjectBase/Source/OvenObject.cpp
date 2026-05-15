@@ -1,6 +1,6 @@
 #include "OvenObject.h"
 #include "GameManager.h"
-
+#include "Bread.h"
 OvenObject::OvenObject()
 {
 	hImageA = LoadGraph("Image/OvenAfter.png");
@@ -12,7 +12,7 @@ OvenObject::OvenObject()
 	position.y = Screen::HEIGHT/2;
 
 	
-
+	OvenGageMax = 320;
 	ObjectSize = 5;
 
 	centerPosition = VGet(position.x - 64 * ObjectSize / 2, position.y - 64 * ObjectSize / 2, 0);
@@ -21,6 +21,16 @@ OvenObject::OvenObject()
 
 OvenObject::~OvenObject()
 {
+}
+
+VECTOR OvenObject::GetP1()
+{
+	return VGet(position.x - 64, position.y - 64 , 0);
+}
+
+VECTOR OvenObject::GetP2()
+{
+	return VGet(position.x + 128 , position.y + 64, 0);
 }
 
 void OvenObject::Update()
@@ -38,8 +48,6 @@ void OvenObject::Update()
 				MousePY >= centerPosition.y && MousePY <= centerPosition.y + 64 * ObjectSize) {
 				if (Use)
 					Use = false;
-				else
-					Use = true;
 			}
 		}
 
@@ -47,6 +55,19 @@ void OvenObject::Update()
 	else {
 		Push = false;
 	}
+
+	if (Use)
+	{
+		OvenGage += 1;
+		if (OvenGage >= OvenGageMax) {
+			OvenGage = 0;
+			Use = false;
+			Bread* bread = Instantiate<Bread>();
+			bread->centerPosition =  VGet(position.x-55, position.y-55,0);
+			bread->Fire = true;
+		}
+	}
+
 }
 
 void OvenObject::Draw()
@@ -57,4 +78,6 @@ void OvenObject::Draw()
 	else
 		DrawExtendGraph(centerPosition.x + 0, centerPosition.y + 0, centerPosition.x + 64 * ObjectSize, centerPosition.y + 64 * ObjectSize,
 			hImageB, TRUE);
+	DrawBox(centerPosition.x, centerPosition.y + 64 * ObjectSize + 10, centerPosition.x + OvenGageMax, centerPosition.y + 64 * ObjectSize, GetColor(255, 255, 255), TRUE);
+	DrawBox(centerPosition.x, centerPosition.y + 64 * ObjectSize + 10, centerPosition.x + OvenGage, centerPosition.y + 64 * ObjectSize, GetColor(0, 255, 0), TRUE);
 }

@@ -13,10 +13,15 @@ public:
 	void Update() override;
 	void Draw() override;
 
+	VECTOR GetP1();
+	VECTOR GetP2();
+
+
+	bool Use;
+
 
 private:
 
-	bool Use;
 	bool Push;
 
 	int hImageA;
@@ -24,4 +29,7 @@ private:
 	VECTOR position;
 	VECTOR centerPosition;
 	int ObjectSize;
+
+	float OvenGage;
+	float OvenGageMax;
 };
