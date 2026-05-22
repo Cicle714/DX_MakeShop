@@ -4,6 +4,7 @@
 #include "OvenObject.h"
 #include "SelectGameObject.h"
 #include "Bread.h"
+#include "BuyArea.h"
 #include <DxLib.h>
 
 PlayScene::PlayScene()
@@ -11,7 +12,9 @@ PlayScene::PlayScene()
 	SelectGameObject* select;
 	new ItemData();
 	new StartFlag();
-	Instantiate<OvenObject>();
+	Instantiate<BuyArea>();
+	OvenObject* Oven1 = Instantiate<OvenObject>();
+	Oven1->myNum = 0;
 	select = Instantiate<SelectGameObject>();
 	select->GetNum(0);
 	

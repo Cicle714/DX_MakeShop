@@ -153,6 +153,7 @@
     <ClInclude Include="Library\Time.h" />
     <ClInclude Include="Source\BootScene.h" />
     <ClInclude Include="Source\Bread.h" />
+    <ClInclude Include="Source\BuyArea.h" />
     <ClInclude Include="Source\GameManager.h" />
     <ClInclude Include="Source\ItemData.h" />
     <ClInclude Include="Source\OvenObject.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="Library\Time.cpp" />
     <ClCompile Include="Source\BootScene.cpp" />
     <ClCompile Include="Source\Bread.cpp" />
+    <ClCompile Include="Source\BuyArea.cpp" />
     <ClCompile Include="Source\DebugScreen.cpp" />
     <ClCompile Include="Source\ItemData.cpp" />
     <ClCompile Include="Source\OvenObject.cpp" />

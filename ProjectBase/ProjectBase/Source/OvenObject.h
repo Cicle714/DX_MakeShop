@@ -4,6 +4,7 @@
 #include "Screen.h"
 #include <string>
 #include <vector>
+#include "Bread.h"
 
 class OvenObject : public GameObject
 {
@@ -18,7 +19,7 @@ public:
 
 
 	bool Use;
-
+	int myNum;
 
 private:
 
@@ -32,4 +33,5 @@ private:
 
 	float OvenGage;
 	float OvenGageMax;
+
 };

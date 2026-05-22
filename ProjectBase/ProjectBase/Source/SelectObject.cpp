@@ -30,7 +30,7 @@ void SelectGameObject::Update()
 {
 	if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0)
 	{
-		if (!Push) {
+		if (!Push && ItemNum > 0) {
 			Push = true;
 
 			int MousePX;

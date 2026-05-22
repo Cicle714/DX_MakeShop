@@ -1,3 +1,5 @@
+
+#pragma once
 #include "../Library/GameObject.h"
 #include "Screen.h"
 #include <string>
@@ -16,6 +18,9 @@ public:
 	VECTOR centerPosition;
 
 	bool Fire;
+	int OvenNum;
+
+
 private:
 	bool Push;
 

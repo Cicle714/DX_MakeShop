@@ -20,7 +20,7 @@ void Bread::Update()
 {
 	if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0)
 	{
-		if (!Push) {
+		if (!Push && Fire) {
 			Push = true;
 			int MousePX;
 			int MousePY;

@@ -1,6 +1,7 @@
 #include "OvenObject.h"
 #include "GameManager.h"
 #include "Bread.h"
+
 OvenObject::OvenObject()
 {
 	hImageA = LoadGraph("Image/OvenAfter.png");
@@ -44,11 +45,11 @@ void OvenObject::Update()
 			int MousePY;
 			GetMousePoint(&MousePX, &MousePY);
 
-			if (MousePX >= centerPosition.x && MousePX <= centerPosition.x + 64 * ObjectSize &&
+			/*if (MousePX >= centerPosition.x && MousePX <= centerPosition.x + 64 * ObjectSize &&
 				MousePY >= centerPosition.y && MousePY <= centerPosition.y + 64 * ObjectSize) {
 				if (Use)
 					Use = false;
-			}
+			}*/
 		}
 
 	}
@@ -65,6 +66,7 @@ void OvenObject::Update()
 			Bread* bread = Instantiate<Bread>();
 			bread->centerPosition =  VGet(position.x-55, position.y-55,0);
 			bread->Fire = true;
+			bread->OvenNum = myNum;
 		}
 	}
 
