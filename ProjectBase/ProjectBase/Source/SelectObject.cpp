@@ -53,7 +53,7 @@ void SelectGameObject::Update()
 			bread->DestroyMe();
 
 			OvenObject* oven = ObjectManager::FindGameObject<OvenObject>();
-			if (!oven->Use) {
+			if (!oven->Use && Hold && !oven->HaveItem) {
 
 				VECTOR ovenP1 = oven->GetP1();
 				VECTOR ovenP2 = oven->GetP2();
@@ -76,6 +76,7 @@ void SelectGameObject::Update()
 		int MousePX;
 		int MousePY;
 		GetMousePoint(&MousePX, &MousePY);
+
 		bread->position = VGet(MousePX, MousePY, 0);
 		bread->centerPosition = VGet(bread->position.x - 64 * ObjectSize / 2, bread->position.y - 64 * ObjectSize / 2, 0);
 	}

@@ -62,9 +62,10 @@ void OvenObject::Update()
 		OvenGage += 1;
 		if (OvenGage >= OvenGageMax) {
 			OvenGage = 0;
+			HaveItem = true;
 			Use = false;
 			Bread* bread = Instantiate<Bread>();
-			bread->centerPosition =  VGet(position.x-55, position.y-55,0);
+			bread->position =  VGet(position.x + 10, position.y ,0);
 			bread->Fire = true;
 			bread->OvenNum = myNum;
 		}

@@ -20,6 +20,7 @@ public:
 
 	bool Use;
 	int myNum;
+	bool HaveItem;
 
 private:
 

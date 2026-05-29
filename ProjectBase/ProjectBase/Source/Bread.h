@@ -4,6 +4,7 @@
 #include "Screen.h"
 #include <string>
 #include <vector>
+#include "GameManager.h"
 
 class Bread : public GameObject
 {
@@ -30,5 +31,10 @@ private:
 	int Bread1;
 	int Bread2;
 
+	VECTOR FireObjectPos;
+
 	bool Hold;
+
+	GameManager* GameM;
+
 };

@@ -1,15 +1,20 @@
 #include "Bread.h"
+#include "BuyArea.h"
+#include "OvenObject.h"
+
 
 Bread::Bread()
 {
+	GameM = ObjectManager::FindGameObject<GameManager>();
+
 	Bread1 = LoadGraph("Image/Bread.png");
 	Bread2 = LoadGraph("Image/Bread2.png");
 
 
 
 
-	ObjectSize = 2;
-	centerPosition = VGet(position.x - 64 * ObjectSize / 2, position.y - 64 * ObjectSize / 2, 0);
+	ObjectSize = 128;
+	centerPosition = VGet(position.x - ObjectSize / 2, position.y -  ObjectSize / 2, 0);
 }
 
 Bread::~Bread()
@@ -21,13 +26,15 @@ void Bread::Update()
 	if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0)
 	{
 		if (!Push && Fire) {
+			FireObjectPos = position;
 			Push = true;
 			int MousePX;
 			int MousePY;
 			GetMousePoint(&MousePX, &MousePY);
-			position = VGet(MousePX, MousePY, 0);if (MousePX >= centerPosition.x && MousePX <= centerPosition.x + 64 * ObjectSize &&
-				MousePY >= centerPosition.y && MousePY <= centerPosition.y + 64 * ObjectSize) {
+			if (MousePX >= position.x - ObjectSize / 2 && MousePX <= position.x + ObjectSize / 2 &&
+				MousePY >= position.y - ObjectSize / 2 && MousePY <= position.y + ObjectSize / 2) {
 				Hold = true;
+				position = VGet(MousePX, MousePY, 0);
 			}
 		}
 
@@ -35,7 +42,23 @@ void Bread::Update()
 	else {
 		Push = false;
 		if (Hold) {
-			DestroyMe();
+			int MousePX;
+			int MousePY;
+			GetMousePoint(&MousePX, &MousePY);
+			BuyArea* buy = ObjectManager::FindGameObject<BuyArea>();
+			if (buy->GetSize1().x <= MousePX && buy->GetSize1().y <= MousePY &&
+				buy->GetSize2().x >= MousePX && buy->GetSize2().y >= MousePY) {
+				OvenObject* oven = ObjectManager::FindGameObject<OvenObject>();
+				oven->HaveItem = false;
+				GameM->MyMoney += 100;
+				DestroyMe();
+			}
+
+			else {
+				position = FireObjectPos;
+				centerPosition = VGet(position.x - ObjectSize / 2, position.y - ObjectSize / 2, 0);
+			}
+			Hold = false;
 		}
 	}
 	if (Hold) {
@@ -43,16 +66,16 @@ void Bread::Update()
 		int MousePY;
 		GetMousePoint(&MousePX, &MousePY);
 		position = VGet(MousePX, MousePY, 0);
-		centerPosition = VGet(position.x - 64 * ObjectSize / 2, position.y - 64 * ObjectSize / 2, 0);
+		centerPosition = VGet(position.x - ObjectSize / 2, position.y - ObjectSize / 2, 0);
 	}
 }
 
 void Bread::Draw()
 {
 	if (Fire)
-		DrawExtendGraph(centerPosition.x + 0, centerPosition.y + 0, centerPosition.x + 64 * ObjectSize, centerPosition.y + 64 * ObjectSize,
+		DrawExtendGraph(position.x - ObjectSize / 2, position.y - ObjectSize / 2, position.x + ObjectSize / 2, position.y +  ObjectSize / 2,
 			Bread2, TRUE);
 	else
-		DrawExtendGraph(centerPosition.x + 0, centerPosition.y + 0, centerPosition.x + 64 * ObjectSize, centerPosition.y + 64 * ObjectSize,
+		DrawExtendGraph(position.x - ObjectSize / 2, position.y - ObjectSize / 2, position.x + ObjectSize / 2, position.y + ObjectSize / 2,
 			Bread1, TRUE);
 }
