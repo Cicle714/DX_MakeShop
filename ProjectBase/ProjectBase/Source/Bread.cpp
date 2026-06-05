@@ -56,7 +56,6 @@ void Bread::Update()
 
 			else {
 				position = FireObjectPos;
-				centerPosition = VGet(position.x - ObjectSize / 2, position.y - ObjectSize / 2, 0);
 			}
 			Hold = false;
 		}
@@ -66,15 +65,16 @@ void Bread::Update()
 		int MousePY;
 		GetMousePoint(&MousePX, &MousePY);
 		position = VGet(MousePX, MousePY, 0);
-		centerPosition = VGet(position.x - ObjectSize / 2, position.y - ObjectSize / 2, 0);
 	}
 }
 
 void Bread::Draw()
 {
-	if (Fire)
-		DrawExtendGraph(position.x - ObjectSize / 2, position.y - ObjectSize / 2, position.x + ObjectSize / 2, position.y +  ObjectSize / 2,
+	if (Fire) {
+		DrawFormatString(500, 0, GetColor(255, 255, 255), "x:%d  y:%d", position.x, position.y);
+		DrawExtendGraph(position.x - ObjectSize / 2, position.y - ObjectSize / 2, position.x + ObjectSize / 2, position.y + ObjectSize / 2,
 			Bread2, TRUE);
+	}
 	else
 		DrawExtendGraph(position.x - ObjectSize / 2, position.y - ObjectSize / 2, position.x + ObjectSize / 2, position.y + ObjectSize / 2,
 			Bread1, TRUE);

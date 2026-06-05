@@ -59,7 +59,7 @@ void OvenObject::Update()
 
 	if (Use)
 	{
-		OvenGage += 1;
+		OvenGage += 10;
 		if (OvenGage >= OvenGageMax) {
 			OvenGage = 0;
 			HaveItem = true;

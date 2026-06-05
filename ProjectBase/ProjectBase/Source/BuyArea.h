@@ -20,7 +20,7 @@ public:
 	int ObjectSizeY;
 
 	VECTOR GetSize1() { return VGet(position.x, position.y - ObjectSizeY/2, 0); }
-	VECTOR GetSize2() { return VGet(position.x + ObjectSizeX / 2, position.y + ObjectSizeY / 2, 0); }
+	VECTOR GetSize2() { return VGet(position.x + ObjectSizeX, position.y + ObjectSizeY / 2, 0); }
 
 
 private:

@@ -11,4 +11,6 @@ public:
 	void Draw() override;
 private: 
 	GameManager* GameM;
+	int hImage;
+	int hImage2;
 };
