@@ -14,7 +14,7 @@ OvenObject::OvenObject()
 
 	
 	OvenGageMax = 320;
-	ObjectSize = 5;
+	ObjectSize = 6.5f;
 
 	centerPosition = VGet(position.x - 64 * ObjectSize / 2, position.y - 64 * ObjectSize / 2, 0);
 
@@ -76,11 +76,11 @@ void OvenObject::Update()
 void OvenObject::Draw()
 {
 	if(Use)
-	DrawExtendGraph(centerPosition.x + 0, centerPosition.y +0, centerPosition.x + 64 * ObjectSize,centerPosition.y + 64*ObjectSize,
+	DrawExtendGraph(centerPosition.x + 0, centerPosition.y -30, centerPosition.x + 64 * ObjectSize,centerPosition.y-30 + 64*ObjectSize,
 		hImageA, TRUE);
 	else
-		DrawExtendGraph(centerPosition.x + 0, centerPosition.y + 0, centerPosition.x + 64 * ObjectSize, centerPosition.y + 64 * ObjectSize,
+		DrawExtendGraph(centerPosition.x + 0, centerPosition.y -30, centerPosition.x + 64 * ObjectSize, centerPosition.y-30 + 64 * ObjectSize,
 			hImageB, TRUE);
-	DrawBox(centerPosition.x, centerPosition.y + 64 * ObjectSize + 10, centerPosition.x + OvenGageMax, centerPosition.y + 64 * ObjectSize, GetColor(255, 255, 255), TRUE);
-	DrawBox(centerPosition.x, centerPosition.y + 64 * ObjectSize + 10, centerPosition.x + OvenGage, centerPosition.y + 64 * ObjectSize, GetColor(0, 255, 0), TRUE);
+	DrawBox(centerPosition.x + 40, centerPosition.y + 64 * ObjectSize + 10, centerPosition.x + OvenGageMax + 40, centerPosition.y + 64 * ObjectSize, GetColor(255, 255, 255), TRUE);
+	DrawBox(centerPosition.x + 40, centerPosition.y + 64 * ObjectSize + 10, centerPosition.x + OvenGage + 40, centerPosition.y + 64 * ObjectSize, GetColor(0, 255, 0), TRUE);
 }
