@@ -40,11 +40,12 @@ void PlayScene::Draw()
 {
 	GameM = ObjectManager::FindGameObject<GameManager>();
 	SetFontSize(64);
-	if (GameM != NULL) {
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "$:%d", GameM->MyMoney);
-	}
+	
 	DrawExtendGraph(-235,-100, Screen::WIDTH + 265, Screen::HEIGHT,
 		hImage, TRUE);
-	DrawExtendGraph(-200,200, Screen::WIDTH + 200, Screen::HEIGHT + 500,
+	DrawExtendGraph(-300,200, Screen::WIDTH, Screen::HEIGHT + 500,
 		hImage2, TRUE);
+	if (GameM != NULL) {
+		DrawFormatString(0, 0, GetColor(0, 0, 0), "$:%d", GameM->MyMoney);
+	}
 }
