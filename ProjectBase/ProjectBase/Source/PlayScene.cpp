@@ -7,6 +7,7 @@
 #include "BuyArea.h"
 #include <DxLib.h>
 #include "GameManager.h"
+#include "MenuButton.h"
 
 PlayScene::PlayScene()
 {
@@ -22,6 +23,7 @@ PlayScene::PlayScene()
 	Oven1->myNum = 0;
 	select = Instantiate<SelectGameObject>();
 	select->GetNum(0);
+	Instantiate<MenuButton>();
 
 }
 

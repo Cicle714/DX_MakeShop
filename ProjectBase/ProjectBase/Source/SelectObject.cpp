@@ -12,7 +12,9 @@ SelectGameObject::SelectGameObject()
 
 	Bread1 = LoadGraph("Image/Bread.png");
 
-	position.x = 300;
+	Icon = LoadGraph("Image/Icon.png");
+
+	position.x = 150;
 	position.y = 600;
 
 	ItemNum = 10;
@@ -38,8 +40,8 @@ void SelectGameObject::Update()
 
 			GetMousePoint(&MousePX, &MousePY);
 
-			if (MousePX >= centerPosition.x && MousePX <= centerPosition.x + 64 * ObjectSize &&
-				MousePY >= centerPosition.y && MousePY <= centerPosition.y + 64 * ObjectSize) {
+			if (MousePX >= centerPosition.x - 32 && MousePX <= centerPosition.x + 32 + 64 * ObjectSize &&
+				MousePY >= centerPosition.y - 32&& MousePY <= centerPosition.y + 32 + 64 * ObjectSize) {
 				Hold = true;
 				ItemNum--;
 				bread = Instantiate<Bread>();
@@ -95,7 +97,8 @@ void SelectGameObject::Draw()
 {
 	switch(selectNum)
 	{
-	case 0:
+	case 0:DrawExtendGraph(centerPosition.x -32, centerPosition.y -32, centerPosition.x+32 + 64 * ObjectSize, centerPosition.y + 32+ 64 * ObjectSize,
+		Icon, TRUE);
 		DrawExtendGraph(centerPosition.x + 0, centerPosition.y + 0, centerPosition.x + 64 * ObjectSize, centerPosition.y + 64 * ObjectSize,
 			Bread1, TRUE);
 		SetFontSize(20);

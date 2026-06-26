@@ -13,4 +13,5 @@ private:
 	GameManager* GameM;
 	int hImage;
 	int hImage2;
+	int hImage3;
 };

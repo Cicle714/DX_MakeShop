@@ -6,11 +6,11 @@
 #include <vector>
 #include "GameManager.h"
 
-class Bread : public GameObject
+class MenuButton : public GameObject
 {
 public:
-	Bread();
-	~Bread();
+	MenuButton();
+	~MenuButton();
 	void Update() override;
 	void Draw() override;
 
@@ -25,16 +25,10 @@ public:
 private:
 	bool Push;
 
-	int ObjectSize;
+	int ButtonSize;
 
-	int mugi;
-	int Bread1;
-	int Bread2;
-	int Icon;
-
-	VECTOR FireObjectPos;
-
-	bool Hold;
+	VECTOR ButtonScale;
+	
 
 	GameManager* GameM;
 

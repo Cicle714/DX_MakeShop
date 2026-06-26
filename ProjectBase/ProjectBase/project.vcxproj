@@ -156,6 +156,7 @@
     <ClInclude Include="Source\BuyArea.h" />
     <ClInclude Include="Source\GameManager.h" />
     <ClInclude Include="Source\ItemData.h" />
+    <ClInclude Include="Source\MenuButton.h" />
     <ClInclude Include="Source\OvenObject.h" />
     <ClInclude Include="Source\Screen.h" />
     <ClInclude Include="Source\DebugScreen.h" />
@@ -185,6 +186,7 @@
     <ClCompile Include="Source\BuyArea.cpp" />
     <ClCompile Include="Source\DebugScreen.cpp" />
     <ClCompile Include="Source\ItemData.cpp" />
+    <ClCompile Include="Source\MenuButton.cpp" />
     <ClCompile Include="Source\OvenObject.cpp" />
     <ClCompile Include="Source\PlayScene.cpp" />
     <ClCompile Include="Source\SceneFactory.cpp" />

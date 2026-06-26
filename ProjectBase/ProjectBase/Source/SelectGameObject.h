@@ -35,6 +35,6 @@ private:
 
 	int mugi;
 	int Bread1;
-
+	int Icon;
 
 };
